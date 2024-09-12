@@ -1,0 +1,1228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding-top: 40px; /* Add padding to account for the marquee */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: fixed;
+    top: 40px; /* Position header below the marquee */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+header.sticky {
+    top: 0; /* When sticky, move to the top */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+section {
+    padding: 5rem 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-icons i {
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+    color: var(--primary-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-item i {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--primary-color);
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Midlane styles */
+.bike-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.bike-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.bike-card:hover {
+    transform: translateY(-5px);
+}
+
+.bike-card img {
+    width: calc(100% - 20px);  /* Subtracting 20px to account for padding */
+    height: 160px;  /* Reduced from 180px */
+    object-fit: contain;  /* Changed from cover to contain */
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px 8px 0 0;  /* Rounded corners on top */
+}
+
+.bike-card-content {
+    padding: 1rem 1.5rem 1.5rem;  /* Increased horizontal padding */
+}
+
+.bike-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.bike-card p {
+    margin-bottom: 1rem;
+}
+
+.bike-card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-card-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #34495e;
+}
+
+.book-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.book-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sorting button styles */
+.sorting-buttons {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.sorting-buttons button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sorting-buttons button:hover {
+    background-color: var(--primary-color);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #1a1a2e;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+/* Add some padding to the top of the main content to prevent sudden jumps when the header becomes sticky */
+main {
+    padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #4a4ae9;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Update filter container styles */
+.filter-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.price-filter {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.price-filter h3 {
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+#price-range {
+    width: 200px;
+}
+
+.price-inputs {
+    display: none; /* Hide the input fields */
+}
+
+.sorting-container {
+    margin-left: 1rem;
+}
+
+.sort-dropdown {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.bike-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bike-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bike-card img {
+    width: calc(100% - 20px);  /* Subtracting 20px to account for padding */
+    height: 160px;  /* Reduced from 180px */
+    object-fit: contain;  /* Changed from cover to contain */
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px 8px 0 0;  /* Rounded corners on top */
+}
+
+.bike-card-content {
+    padding: 1.5rem;
+}
+
+.bike-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+}
+
+.bike-card p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.bike-card p svg {
+    margin-right: 0.5rem;
+}
+
+.bike-card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-card-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.bike-card-buttons button svg {
+    margin-right: 0.5rem;
+}
+
+.details-btn {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #2a2a4e;
+}
+
+.book-btn {
+    background-color: #4a4ae9;
+    color: #fff;
+}
+
+.book-btn:hover {
+    background-color: #3a3ad9;
+}
+
+footer {
+    background-color: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Marquee styles */
+.marquee {
+    background-color: #4a4ae9;
+    color: #fff;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#wheelContainer {
+    margin-top: 1rem;
+    position: relative;
+}
+
+#wheelCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+#spinResult {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#emailInput {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: #4a4ae9;
+    box-shadow: 0 0 0 2px rgba(74, 74, 233, 0.2);
+}
+
+#spinButton {
+    background-color: #4a4ae9;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#spinButton:hover {
+    background-color: #3a3ad9;
+}
+
+#spinButton:active {
+    transform: translateY(1px);
+}
+
+/* Blog styles */
+#blog {
+    padding: 4rem 0;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-post h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #1a1a2e;
+}
+
+.blog-post .meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 1rem;
+}
+
+.blog-post p {
+    margin: 1rem;
+    color: #333;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4a4ae9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #3a3ad9;
+}
+
+.bike-card p {
+    margin-bottom: 1rem;
+}
+
+.bike-card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-card-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #34495e;
+}
+
+.book-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.book-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sorting button styles */
+.sorting-buttons {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.sorting-buttons button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sorting-buttons button:hover {
+    background-color: var(--primary-color);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #1a1a2e;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+/* Add some padding to the top of the main content to prevent sudden jumps when the header becomes sticky */
+main {
+    padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #4a4ae9;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sorting-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.sort-dropdown {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.bike-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bike-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bike-card img {
+    width: calc(100% - 20px);  /* Subtracting 20px to account for padding */
+    height: 160px;  /* Reduced from 180px */
+    object-fit: contain;  /* Changed from cover to contain */
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px 8px 0 0;  /* Rounded corners on top */
+}
+
+.bike-card-content {
+    padding: 1.5rem;
+}
+
+.bike-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+}
+
+.bike-card p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.bike-card p svg {
+    margin-right: 0.5rem;
+}
+
+.bike-card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-card-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.bike-card-buttons button svg {
+    margin-right: 0.5rem;
+}
+
+.details-btn {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #2a2a4e;
+}
+
+.book-btn {
+    background-color: #4a4ae9;
+    color: #fff;
+}
+
+.book-btn:hover {
+    background-color: #3a3ad9;
+}
+
+footer {
+    background-color: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Marquee styles */
+.marquee {
+    background-color: #4a4ae9;
+    color: #fff;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#wheelContainer {
+    margin-top: 1rem;
+    position: relative;
+}
+
+#wheelCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+#spinResult {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#emailInput {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: #4a4ae9;
+    box-shadow: 0 0 0 2px rgba(74, 74, 233, 0.2);
+}
+
+#spinButton {
+    background-color: #4a4ae9;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#spinButton:hover {
+    background-color: #3a3ad9;
+}
+
+#spinButton:active {
+    transform: translateY(1px);
+}
+
+/* ... (rest of the styles remain the same) ... */
+
+.bike-card-content {
+    padding: 1.5rem;
+}
+
+.bike-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+}
+
+.bike-card p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.bike-card p svg {
+    margin-right: 0.5rem;
+}
+
+.bike-card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-card-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.bike-card-buttons button svg {
+    margin-right: 0.5rem;
+}
+
+.details-btn {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #2a2a4e;
+}
+
+.book-btn {
+    background-color: #4a4ae9;
+    color: #fff;
+}
+
+.book-btn:hover {
+    background-color: #3a3ad9;
+}
+
+footer {
+    background-color: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Marquee styles */
+.marquee {
+    background-color: #4a4ae9;
+    color: #fff;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#wheelContainer {
+    margin-top: 1rem;
+    position: relative;
+}
+
+#wheelCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+#spinResult {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#emailInput {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: #4a4ae9;
+    box-shadow: 0 0 0 2px rgba(74, 74, 233, 0.2);
+}
+
+#spinButton {
+    background-color: #4a4ae9;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#spinButton:hover {
+    background-color: #3a3ad9;
+}
+
+#spinButton:active {
+    transform: translateY(1px);
+}
+
+/* Booking Modal Styles */
+.booking-modal .modal-content {
+    max-width: 400px;
+    text-align: center;
+}
+
+.booking-modal h2 {
+    color: #4a4ae9;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-modal h2 svg {
+    margin-right: 0.5rem;
+}
+
+.booking-modal p {
+    margin-bottom: 1rem;
+}
+
+.booking-modal input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.booking-modal button {
+    background-color: #4a4ae9;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.booking-modal button:hover {
+    background-color: #3a3ad9;
+}
+
+.booking-modal button svg {
+    margin-right: 0.5rem;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midlane - Premium Bike Rentals in Chandigarh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+</head>
+<body>
+    <div class="marquee">
+        <p>🎉 End of Season Sale! 20% Off on your first rental from us! 🏍️</p>
+    </div>
+    <header id="main-header">
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">Midlane</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#journey">Journey</a></li>
+                    <li><a href="index.html#philosophy">Philosophy</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="midlane.html" class="active">Rent a Bike</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="midlane">
+            <div class="container">
+                <h1>Midlane Premium Bike Rentals</h1>
+                <p class="tagline">Experience Chandigarh on Two Wheels: Unleash Your Adventure with Midlane's Premium Bikes!</p>
+                <div class="filter-container">
+                    <div class="price-filter">
+                        <h3>Price Range:</h3>
+                        <div id="price-range"></div>
+                        <div class="price-inputs">
+                            <input type="number" id="min-price" min="0" max="5000" placeholder="Min">
+                            <input type="number" id="max-price" min="0" max="5000" placeholder="Max">
+                        </div>
+                    </div>
+                    <div class="sorting-container">
+                        <select id="sortDropdown" class="sort-dropdown">
+                            <option value="default">Sort by</option>
+                            <option value="asc">Price: Low to High</option>
+                            <option value="desc">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bike-grid">
+                    <!-- Bike cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Midlane. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="spinWheelPopup" class="popup">
+        <div class="popup-content">
+            <h2>Spin the Wheel for a Chance to Win!</h2>
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <button id="spinButton">Spin the Wheel</button>
+            <div id="wheelContainer">
+                <canvas id="wheelCanvas" width="300" height="300"></canvas>
+                <div id="spinResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="midlane.js"></script>
+</body>
+</html>
